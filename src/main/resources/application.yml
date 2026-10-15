@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/productivity
+    username: appuser
+    password: local_dev_password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+server:
+  port: 8080
+app:
+  worker:
+    fixed-delay-ms: 1000
+    max-attempts: 3
+    retry:
+      initial-delay-ms: 1000
+      max-delay-ms: 60000
+logging:
+  level:
+    com.example.transactions: INFO
